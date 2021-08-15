@@ -16,6 +16,8 @@ document.querySelector("#rate").addEventListener("input", () => {
     speech.rate = rate;
     document.querySelector("#rate-label").innerHTML = rate;
   });
+
+
  
  // Path to PDF file
  var PDF_URL = './resume.pdf';
@@ -79,7 +81,8 @@ document.querySelector("#rate").addEventListener("input", () => {
      var loadingTask = pdfjsLib.getDocument({url:_OBJECT_URL})
      loadingTask.promise.then(PDFDocumentInstance => {
          var totalPages = PDFDocumentInstance.numPages;
-         var pageNumber = 2;
+         var pageNumber =parseInt(document.getElementById('pageno').value);
+         console.log( typeof(pageNumber) )
 
          // Extract the text
          getPageText(pageNumber, PDFDocumentInstance).then(function (textPage) {
@@ -90,3 +93,8 @@ document.querySelector("#rate").addEventListener("input", () => {
          });
      })
  })
+
+ document.querySelector("#cancel").addEventListener("click", () => {
+     console.log("Stoped")
+    window.speechSynthesis.cancel();
+  });
