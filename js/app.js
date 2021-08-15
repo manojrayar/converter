@@ -17,6 +17,10 @@ document.querySelector("#rate").addEventListener("input", () => {
     document.querySelector("#rate-label").innerHTML = rate;
   });
 
+  document.querySelector("#voices").addEventListener("change", () => {
+    speech.voice = voices[document.querySelector("#voices").value];
+  });
+
 
  
  // Path to PDF file
