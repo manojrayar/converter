@@ -7,20 +7,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="./css/style.css">
     <title>Document</title>
 </head>
 
 <body>
     <div class="container">
-        <div class="input-field col s12">
+          <!-- <div class="input-field col s12">
             <select id="voices"></select>
             <label>Select Voice</label>
-          </div>
+          </div> -->
           <form action="#">
             <div class="file-field input-field">
               <div class="btn">
                 <span>PDF-File</span>
-                <input type="file" id="input" />
+                <input type="file" accept="application/pdf" id="input" />
               </div>
               <div class="file-path-wrapper">
                 <input class="file-path validate" type="text">
@@ -43,9 +44,15 @@
                   </form>
               </div>
           </div>
+          <div class="row">
+            <button class="btn waves-effect" id="speak">Listen</button>
+            <button class="btn waves-effect" id="cancel">Stop</button>
+          </div>
         
-        <button class="btn waves-effect" id="speak">Listen</button>
-        <button class="btn waves-effect" id="cancel">Stop</button>
+        <div class="row">
+          <button class="btn waves-effect" id="pause">Pause</button>
+          <button class="btn waves-effect" id="resume">Resume</button>
+        </div>
     </div>
 
     <!-- Compiled and minified JavaScript -->

@@ -5,8 +5,8 @@ let voices = [];
 window.speechSynthesis.onvoiceschanged = () => {
   voices = window.speechSynthesis.getVoices();
   speech.voice = voices[0];
-  let voiceSelect = document.querySelector("#voices");
-  voices.forEach((voice, i) => (voiceSelect.options[i] = new Option(voice.name, i)));
+//   let voiceSelect = document.querySelector("#voices");
+//   voices.forEach((voice, i) => (voiceSelect.options[i] = new Option(voice.name, i)));
   var elems = document.querySelectorAll('select');
   var instances = M.FormSelect.init(elems);
 };
@@ -17,9 +17,9 @@ document.querySelector("#rate").addEventListener("input", () => {
     document.querySelector("#rate-label").innerHTML = rate;
   });
 
-  document.querySelector("#voices").addEventListener("change", () => {
-    speech.voice = voices[document.querySelector("#voices").value];
-  });
+//   document.querySelector("#voices").addEventListener("change", () => {
+//     speech.voice = voices[document.querySelector("#voices").value];
+//   });
 
 
  
@@ -85,6 +85,7 @@ document.querySelector("#rate").addEventListener("input", () => {
      var loadingTask = pdfjsLib.getDocument({url:_OBJECT_URL})
      loadingTask.promise.then(PDFDocumentInstance => {
          var totalPages = PDFDocumentInstance.numPages;
+         document.getElementById('pageno').setAttribute('max',totalPages)
          var pageNumber =parseInt(document.getElementById('pageno').value);
          console.log( typeof(pageNumber) )
 
@@ -101,4 +102,12 @@ document.querySelector("#rate").addEventListener("input", () => {
  document.querySelector("#cancel").addEventListener("click", () => {
      console.log("Stoped")
     window.speechSynthesis.cancel();
+  });
+
+  document.querySelector("#pause").addEventListener("click", () => {
+    window.speechSynthesis.pause();
+  });
+  
+  document.querySelector("#resume").addEventListener("click", () => {
+    window.speechSynthesis.resume();
   });
