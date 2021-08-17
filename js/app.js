@@ -104,10 +104,10 @@ document.querySelector("#rate").addEventListener("input", () => {
     window.speechSynthesis.cancel();
   });
 
-  document.querySelector("#pause").addEventListener("click", () => {
-    window.speechSynthesis.pause();
-  });
+  // document.querySelector("#pause").addEventListener("click", () => {
+  //   window.speechSynthesis.pause();
+  // });
   
-  document.querySelector("#resume").addEventListener("click", () => {
-    window.speechSynthesis.resume();
-  });
+  // document.querySelector("#resume").addEventListener("click", () => {
+  //   window.speechSynthesis.resume();
+  // });
