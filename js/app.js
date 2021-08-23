@@ -92,9 +92,10 @@ document.querySelector("#rate").addEventListener("input", () => {
          // Extract the text
          getPageText(pageNumber, PDFDocumentInstance).then(function (textPage) {
              // Show the text of the page in the console
-             speech.text = textPage;
+             
+             speech.text = textPage.toLowerCase() ;
              window.speechSynthesis.speak(speech);
-             console.log(textPage);
+             console.log(textPage.toLowerCase());
          });
      })
  })
